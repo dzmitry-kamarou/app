@@ -1,6 +1,6 @@
-package com.dzmitrykamarou.app.repository;
+package com.dzmitrykamarou.diamond.repository;
 
-import com.dzmitrykamarou.app.model.Account;
+import com.dzmitrykamarou.diamond.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
