@@ -1,4 +1,4 @@
-package com.dzmitrykamarou.app.model;
+package com.dzmitrykamarou.diamond.model;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.persistence.Entity;

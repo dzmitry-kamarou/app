@@ -1,4 +1,4 @@
-package com.dzmitrykamarou.app.controller;
+package com.dzmitrykamarou.diamond.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
