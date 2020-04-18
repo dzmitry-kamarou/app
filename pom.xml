@@ -10,10 +10,10 @@
     <relativePath/>
   </parent>
   <groupId>com.dzmitrykamarou</groupId>
-  <artifactId>app</artifactId>
+  <artifactId>diamond</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>app</name>
-  <description>app</description>
+  <name>diamond</name>
+  <description>diamond</description>
 
   <properties>
     <java.version>1.8</java.version>
