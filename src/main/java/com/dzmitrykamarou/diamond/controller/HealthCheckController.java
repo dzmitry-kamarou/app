@@ -15,7 +15,6 @@ public class HealthCheckController implements HealthIndicator {
 
   @GetMapping("/healthcheck")
   public String getHealthCheck() {
-
     return "OK!";
   }
 
