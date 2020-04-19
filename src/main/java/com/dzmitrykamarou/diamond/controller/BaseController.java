@@ -1,4 +1,4 @@
-package com.dzmitrykamarou.app.controller;
+package com.dzmitrykamarou.diamond.controller;
 
 import java.util.HashMap;
 import java.util.Map;
