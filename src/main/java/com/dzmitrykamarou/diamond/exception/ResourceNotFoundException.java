@@ -1,4 +1,4 @@
-package com.dzmitrykamarou.app.exception;
+package com.dzmitrykamarou.diamond.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

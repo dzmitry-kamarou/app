@@ -1,8 +1,8 @@
-package com.dzmitrykamarou.app.controller;
+package com.dzmitrykamarou.diamond.controller;
 
-import com.dzmitrykamarou.app.exception.ResourceNotFoundException;
-import com.dzmitrykamarou.app.model.Account;
-import com.dzmitrykamarou.app.repository.AccountRepository;
+import com.dzmitrykamarou.diamond.exception.ResourceNotFoundException;
+import com.dzmitrykamarou.diamond.model.Account;
+import com.dzmitrykamarou.diamond.repository.AccountRepository;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
