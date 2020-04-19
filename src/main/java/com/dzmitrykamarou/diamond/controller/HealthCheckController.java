@@ -1,9 +1,10 @@
 package com.dzmitrykamarou.diamond.controller;
 
-import javax.activation.DataSource;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,7 @@ public class HealthCheckController implements HealthIndicator {
 
   @Override
   public Health health() {
-    return null;
+    DataSourceHealthIndicator indicator = new DataSourceHealthIndicator(postgresDataSource);
+    return indicator.health();
   }
 }
