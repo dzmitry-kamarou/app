@@ -3,3 +3,6 @@ target/
 
 # IntelliJ IDEA files
 .idea/
+
+# Extra files
+*.iml
