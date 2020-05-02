@@ -1,0 +1,18 @@
+version: '3'
+services:
+  diamond:
+    container_name: diamond-postgresql
+    image: diamond-postgresql
+    build: ./
+    ports:
+      - "8081:8081"
+    depends_on:
+      - dbpostgresql
+  dbpostgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=diamond
