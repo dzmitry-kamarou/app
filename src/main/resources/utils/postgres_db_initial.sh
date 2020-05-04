@@ -5,7 +5,7 @@ sudo apt install postgresql-contrib
 psql -V
 sudo -i -u postgres psql
 #sudo service postgresql start
-CREATE DATABASE lusiadas
+CREATE DATABASE diamond
 ALTER USER postgres WITH PASSWORD 'postgres'
 
 # In case you won't set the password for postrges user do
