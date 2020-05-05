@@ -6,3 +6,6 @@ target/
 
 # Extra files
 *.iml
+
+# Sensitive
+.env

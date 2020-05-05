@@ -16,6 +16,7 @@ services:
       - POSTGRES_DB=diamond
     restart: unless-stopped
   api:
+    env_file: .env
     image: diamond-server
     network_mode: bridge
     container_name: diamond-server-container
