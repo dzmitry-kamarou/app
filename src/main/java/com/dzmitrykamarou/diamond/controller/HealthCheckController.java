@@ -1,5 +1,6 @@
 package com.dzmitrykamarou.diamond.controller;
 
+import java.util.HashMap;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
@@ -15,8 +16,11 @@ public class HealthCheckController implements HealthIndicator {
   DataSource postgresDataSource;
 
   @GetMapping("/healthcheck")
-  public String getHealthCheck() {
-    return "OK develop!!!";
+  public HashMap<String, Object> getHealthCheck() {
+    HashMap<String, Object> healthStatuses = new HashMap<>();
+    healthStatuses.put("API", "UP");
+    healthStatuses.put("DB", health().getStatus().getCode());
+    return healthStatuses;
   }
 
   @Override
