@@ -18,7 +18,7 @@ public class HealthCheckController implements HealthIndicator {
   @GetMapping("/healthcheck")
   public HashMap<String, Object> getHealthCheck() {
     HashMap<String, Object> healthStatuses = new HashMap<>();
-    healthStatuses.put("API", "UP");
+    healthStatuses.put("API", "UP!");
     healthStatuses.put("DB", health().getStatus().getCode());
     return healthStatuses;
   }
