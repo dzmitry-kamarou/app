@@ -23,24 +23,24 @@ public class AccountController extends BaseController {
   @Autowired
   private AccountRepository accountRepository;
 
-  @GetMapping("/accounts")
+  @GetMapping(API + V1 + "/accounts")
   public List<Account> getAccounts() {
     return accountRepository.findAll(Sort.by(Direction.ASC, "id"));
   }
 
-  @GetMapping("/accounts/{accountId}")
+  @GetMapping(API + V1 + "/accounts/{accountId}")
   public ResponseEntity<?> getAccount(@PathVariable Long accountId) {
     return accountRepository.findById(accountId)
         .map(account -> new ResponseEntity<>(account, HttpStatus.OK))
         .orElseThrow(() -> new ResourceNotFoundException("Account not found with id " + accountId));
   }
 
-  @PostMapping("/accounts")
+  @PostMapping(API + V1 + "/accounts")
   public Account postAccounts(@Valid @RequestBody Account account) {
     return accountRepository.save(account);
   }
 
-  @DeleteMapping("/accounts/{accountId}")
+  @DeleteMapping(API + V1 + "/accounts/{accountId}")
   public ResponseEntity<?> deleteAccounts(@PathVariable Long accountId) {
     return accountRepository.findById(accountId).map(account -> {
       accountRepository.delete(account);
