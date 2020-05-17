@@ -23,12 +23,12 @@ public class AccountController extends BaseController {
   @Autowired
   private AccountRepository accountRepository;
 
-  @GetMapping(API + V1 + "/accounts")
+  @GetMapping(value = API + V1 + "/accounts", produces = {"application/json"})
   public List<Account> getAccounts() {
     return accountRepository.findAll(Sort.by(Direction.ASC, "id"));
   }
 
-  @GetMapping(API + V1 + "/accounts/{accountId}")
+  @GetMapping(value = API + V1 + "/accounts/{accountId}", produces = {"application/json"})
   public ResponseEntity<?> getAccount(@PathVariable Long accountId) {
     return accountRepository.findById(accountId)
         .map(account -> new ResponseEntity<>(account, HttpStatus.OK))
