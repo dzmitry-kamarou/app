@@ -1,5 +1,8 @@
 package com.dzmitrykamarou.diamond.controller;
 
+import static com.dzmitrykamarou.diamond.controller.BaseController.API;
+import static com.dzmitrykamarou.diamond.controller.BaseController.V1;
+
 import java.util.HashMap;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,7 @@ public class HealthCheckController implements HealthIndicator {
   @Autowired
   DataSource postgresDataSource;
 
-  @GetMapping("/healthcheck")
+  @GetMapping(value = API + V1 + "/healthcheck", produces = {"application/json"})
   public HashMap<String, Object> getHealthCheck() {
     HashMap<String, Object> healthStatuses = new HashMap<>();
     healthStatuses.put("API", "UP");
@@ -25,7 +28,6 @@ public class HealthCheckController implements HealthIndicator {
 
   @Override
   public Health health() {
-    DataSourceHealthIndicator indicator = new DataSourceHealthIndicator(postgresDataSource);
-    return indicator.health();
+    return new DataSourceHealthIndicator(postgresDataSource).health();
   }
 }

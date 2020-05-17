@@ -3,7 +3,7 @@ sudo apt install postgresql-client-common
 # sudo apt-get install postgresql-client ?
 sudo apt install postgresql-contrib
 psql -V
-sudo -i -u postgres psql
+sudo psql -i -u postgres
 #sudo service postgresql start
 CREATE DATABASE diamond
 ALTER USER postgres WITH PASSWORD 'postgres'
