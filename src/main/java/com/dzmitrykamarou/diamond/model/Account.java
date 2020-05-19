@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "accounts")
-@JsonPropertyOrder({"id", "firstName", "lastName", "createdAt", "updatedAt"})
+@JsonPropertyOrder({"id", "userName", "firstName", "lastName", "createdAt", "updatedAt"})
 public class Account extends BaseEntity {
 
   @Id
@@ -21,6 +21,7 @@ public class Account extends BaseEntity {
   private Long id;
   private String firstName;
   private String lastName;
+  private String userName;
 
   public Long getId() {
     return id;
@@ -44,5 +45,13 @@ public class Account extends BaseEntity {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
   }
 }
