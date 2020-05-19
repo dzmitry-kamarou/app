@@ -5,10 +5,12 @@ pipeline {
         stage('build') {
             steps {
                 withMaven(maven: 'maven_3_6_3') {
-                    if (env.UNIT_TESTS) {
-                        sh 'mvn clean install'
-                    } else {
-                        sh 'mvn clean install -DskipTests'
+                    script {
+                        if (env.UNIT_TESTS) {
+                            sh 'mvn clean install'
+                        } else {
+                            sh 'mvn clean install -DskipTests'
+                        }
                     }
                 }
             }
