@@ -5,7 +5,11 @@ pipeline {
         stage('build') {
             steps {
                 withMaven(maven: 'maven_3_6_3') {
-                    sh 'mvn clean install -DskipTests' // now we have no unit tests
+                    if (env.UNIT_TESTS) {
+                        sh 'mvn clean install'
+                    } else {
+                        sh 'mvn clean install -DskipTests'
+                    }
                 }
             }
         }
