@@ -1,0 +1,33 @@
+version: "3"
+services:
+  db:
+    image: postgres:alpine
+    network_mode: bridge
+    container_name: diamond-postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=diamond
+    restart: unless-stopped
+  api:
+    env_file: .env
+    image: diamond-server
+    network_mode: bridge
+    container_name: diamond-server-container
+    expose:
+      - 8086
+    ports:
+      - 8086:8086
+    restart: unless-stopped
+    depends_on:
+      - db
+    links:
+      - db
+volumes:
+  postgres-data:
