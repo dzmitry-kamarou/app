@@ -26,5 +26,7 @@ Requires **Java**, **Maven** or **Docker Compose** installed.
 ## Deploy
 1. `$ sudo heroku login`
 2. `$ sudo heroku container:login`
+1. `$ mvn clean install`
+4. `$ sudo docker-compose up -d` (optional)
 3. `$ sudo heroku container:push web -a diamond-dev`
 4. `$ sudo heroku container:release web -a diamond-dev`
