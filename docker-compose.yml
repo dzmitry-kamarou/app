@@ -19,7 +19,7 @@ services:
     env_file: .env
     image: diamond-server
     network_mode: bridge
-    container_name: diamond-server-container
+    container_name: diamond-server
     expose:
       - 8086
     ports:
