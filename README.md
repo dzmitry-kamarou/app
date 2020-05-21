@@ -25,12 +25,13 @@ POSTGRES_PORT=5432
 1. Make code changes
 2. `$ mvn clean install`
 3. `$ sudo docker container rm -f diamond-server`
-4. `$ sudo docker build -t diamond-server .`
-5. `$ sudo docker-compose up -d`
-6. (optional) run tests from diamond-taf-java: `$ mvn clean install -Denv=local -Dscope=smoke`
-7. `$ sudo docker login`
-8. `$ sudo docker tag diamond-server dzmitrykamarou/diamond-server:v1`
-9. `$ sudo docker push dzmitrykamarou/diamond-server:v1`
+4. `$ sudo docker container rm -f diamond-postgres`
+5. `$ sudo docker build -t diamond-server .`
+6. `$ sudo docker-compose up -d`
+7. (optional) run tests from diamond-taf-java: `$ mvn clean install -Denv=local -Dscope=smoke`
+8. `$ sudo docker login`
+9. `$ sudo docker tag diamond-server dzmitrykamarou/diamond-server:v1`
+10. `$ sudo docker push dzmitrykamarou/diamond-server:v1`
 ## Deploy
 1. `$ sudo heroku login`
 2. `$ sudo heroku container:login`
