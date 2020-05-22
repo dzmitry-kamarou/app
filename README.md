@@ -5,10 +5,18 @@ Requires **Java**, **Maven** or **Docker Compose** installed.
 ## Launch
 1. `$ git clone git@github.com:dzmitry-kamarou/diamond.git`
 2. `$ cd diamond`
-3. `$ mvn clean install -DskipTests`
-4. `$ sudo docker build -t diamond-server .`
-5. `$ sudo docker-compose up -d`
-6. open [http://localhost:8086/api/v1](http://localhost:8086/api/v1)
+3. Create `.env` file with env-depending values (e.g.):
+```.env
+POSTGRES_DB=diamond
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_URL=diamond-postgres
+POSTGRES_PORT=5432
+```
+4. `$ mvn clean install -DskipTests`
+5. `$ sudo docker build -t diamond-server .`
+6. `$ sudo docker-compose up -d`
+7. open [http://localhost:8086/api/v1](http://localhost:8086/api/v1)
 ## Install
 1. `$ git clone git@github.com:dzmitry-kamarou/diamond.git`
 2. `$ cd diamond`
@@ -17,12 +25,13 @@ Requires **Java**, **Maven** or **Docker Compose** installed.
 1. Make code changes
 2. `$ mvn clean install`
 3. `$ sudo docker container rm -f diamond-server`
-4. `$ sudo docker build -t diamond-server .`
-5. `$ sudo docker-compose up -d`
-6. (optional) run tests from diamond-taf-java: `$ mvn clean install -Denv=local -Dscope=smoke`
-7. `$ sudo docker login`
-8. `$ sudo docker tag diamond-server dzmitrykamarou/diamond-server:v1`
-9. `$ sudo docker push dzmitrykamarou/diamond-server:v1`
+4. `$ sudo docker container rm -f diamond-postgres`
+5. `$ sudo docker build -t diamond-server .`
+6. `$ sudo docker-compose up -d`
+7. (optional) run tests from diamond-taf-java: `$ mvn clean install -Denv=local -Dscope=smoke`
+8. `$ sudo docker login`
+9. `$ sudo docker tag diamond-server dzmitrykamarou/diamond-server:v1`
+10. `$ sudo docker push dzmitrykamarou/diamond-server:v1`
 ## Deploy
 1. `$ sudo heroku login`
 2. `$ sudo heroku container:login`
