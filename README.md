@@ -13,10 +13,12 @@ POSTGRES_PASSWORD=postgres
 POSTGRES_URL=diamond-postgres
 POSTGRES_PORT=5432
 ```
-4. `$ mvn clean install -DskipTests`
-5. `$ sudo docker build -t diamond-server .`
-6. `$ sudo docker-compose up -d`
-7. open [http://localhost:8086/api/v1](http://localhost:8086/api/v1)
+4. `$ mvn clean install`
+5. `$ sudo docker container rm -f diamond-server`
+6. `$ sudo docker container rm -f diamond-postgres`
+7. `$ sudo docker build -t diamond-server .`
+8. `$ sudo docker-compose up -d`
+9. open [http://localhost:8086/api/v1](http://localhost:8086/api/v1)
 ## Install
 1. `$ git clone git@github.com:dzmitry-kamarou/diamond.git`
 2. `$ cd diamond`
