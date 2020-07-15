@@ -1,9 +1,4 @@
 #!/bin/bash
-<<<<<<< HEAD
-# Uncomment next string first time:
-# groupadd docker
-=======
->>>>>>> develop
 URL=http://localhost:8086/api/v1/healthcheck
 mvn clean install
 docker container rm -f diamond-server
