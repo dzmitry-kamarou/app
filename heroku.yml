@@ -5,7 +5,7 @@ setup:
 build:
   docker:
     web: Dockerfile
-    worker: diamond/Dockerfile
+#    worker: diamond/Dockerfile
 release:
   command:
     - ./rerun.sh
