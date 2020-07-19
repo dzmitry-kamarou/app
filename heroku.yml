@@ -2,14 +2,14 @@ setup:
   addons:
     - plan: heroku-postgresql
       as: DATABASE
-  config:
+  config: null
 build:
   docker:
     web: Dockerfile
     worker: diamond/Dockerfile
-  config:
+  config: null
 release:
   command:
     - ./rerun.sh
   image: diamond
-run:
+run: null
