@@ -1,7 +1,7 @@
 package com.dzmitrykamarou.diamond.controller;
 
-import static com.dzmitrykamarou.diamond.controller.BaseController.API;
-import static com.dzmitrykamarou.diamond.controller.BaseController.V1;
+import static com.dzmitrykamarou.diamond.controller.BaseController.API_ENDPOINT;
+import static com.dzmitrykamarou.diamond.controller.BaseController.API_VERSION;
 
 import java.util.HashMap;
 import javax.sql.DataSource;
@@ -18,7 +18,7 @@ public class HealthCheckController implements HealthIndicator {
   @Autowired
   DataSource postgresDataSource;
 
-  @GetMapping(value = API + V1 + "/healthcheck", produces = {"application/json"})
+  @GetMapping(path = API_ENDPOINT + API_VERSION + "/healthcheck", produces = {"application/json"})
   public HashMap<String, Object> getHealthCheck() {
     HashMap<String, Object> healthStatuses = new HashMap<>();
     healthStatuses.put("API", "UP");
